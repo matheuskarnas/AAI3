@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f2f0ef;
+  font-family: Arial, sans-serif;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  color: #333;
+}
+
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #222;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+.projeto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projeto img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.descricao {
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.descricao p {
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.tenologias {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tenologias img {
+  height: 50px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.tenologias img:hover {
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 5%;
+  }
+
+  .projeto img {
+    max-height: 300px;
+  }
+
+  .descricao p {
+    text-align: center;
+  }
+}
