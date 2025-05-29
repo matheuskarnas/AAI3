@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Novo Projeto</title>
+    <link rel="stylesheet" href="/css/projeto.css" />
+  </head>
+  <body>
+    <h1>Cadastrar Novo Projeto</h1>
+    <form action="/projetos" method="POST">
+      <label for="nome">Nome do Projeto:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" required></textarea>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <a href="/projetos">Voltar para lista de projetos</a>
+  </body>
+</html>

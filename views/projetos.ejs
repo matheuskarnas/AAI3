@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos</title>
+    <link rel="stylesheet" href="/css/projeto.css" />
+  </head>
+  <body>
+    <% projetos.forEach(function(p) { %>
+      <div class="projeto">
+        <h1><%= p.nome %></h1>      
+      </div>
+      <div class="descricao">
+        <a href="/projetos/<%= p.id %>">Ver detalhes</a>
+      </div>
+    <% }); %>
+    <h1>Cadastrar Novo Projeto</h1>
+    <form action="/projetos" method="POST">
+      <label for="nome">Nome do Projeto:</label>
+      <input type="text" id="nome" name="nome" required />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" required></textarea>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <a href="/projetos">Voltar para lista de projetos</a>
+  </body>
+</html>

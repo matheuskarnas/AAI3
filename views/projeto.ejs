@@ -8,25 +8,11 @@
   </head>
   <body>
     <div class="projeto">
-      <h1><%= projetoName %></h1>
-      <a href="<%= url %>">
-        <img
-          class="imagem"
-          src="<%= projetoImg %>"
-          alt="Personagens da Disney"
-        />
-      </a>
+      <h1><%= projetoName %></h1>      
     </div>
     <div class="descricao">
       <h2>Descrição do Projeto</h2>
       <p><%= descricao %></p>
-    </div>
-
-    <div class="tenologias">
-      <h3>Principais Tecnologias utilizadas</h3>
-      <% tecnologias.forEach(function(tecnologia) { %>
-      <img height="50px" alt="tecnologia" src="<%= tecnologia %>" />
-      <% }) %>
     </div>
   </body>
 </html>
