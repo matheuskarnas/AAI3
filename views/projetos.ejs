@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projetos</title>
-    <link rel="stylesheet" href="/css/projeto.css" />
+    <link rel="stylesheet" href="/css/projetos.css" />
   </head>
   <body>
     <h1>Cadastrar Novo Projeto</h1>
@@ -17,25 +17,19 @@
 
       <button type="submit">Cadastrar</button>
     </form>
-    <% projetos.forEach(function(p) { %>
-    <div class="projeto">
-      <h1><%= p.nome %></h1>
-    </div>
-    <div class="descricao">
-      <a href="/projetos/<%= p.id %>">Ver detalhes</a>
-    </div>
-    <form
-      action="/projetos/delete/<%= p.id %>"
-      method="POST"
-      style="display: inline"
-    >
-      <button
-        type="submit"
-        onclick="return confirm('Tem certeza que deseja excluir este projeto?');"
-      >
-        Excluir
-      </button>
-    </form>
-    <% }); %>
+
+    <h2>Lista de Projetos</h2>
+    <ul class="lista-projetos">
+      <% projetos.forEach(function(p) { %>
+      <li>
+        <div class="projeto">
+          <h1><%= p.nome %></h1>
+        </div>
+        <div class="descricao">
+          <a href="/projetos/<%= p.id %>">Ver detalhes</a>
+        </div>
+      </li>
+      <% }); %>
+    </ul>
   </body>
 </html>

@@ -11,22 +11,31 @@
       <h1><%= projetoName %></h1>
     </div>
     <div class="descricao">
-      <h2>Descrição do Projeto</h2>
+      <h3>Descrição do Projeto</h3>
       <p><%= descricao %></p>
     </div>
 
     <h2>Editar Projeto</h2>
     <form action="/projetos/update/<%= id %>" method="POST">
       <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" value="<%= projetoName %>" required />
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        value="<%= projetoName %>"
+        required
+      />
 
       <label for="descricao">Descrição:</label>
-      <textarea id="descricao" name="descricao" required><%= descricao %></textarea>
+      <textarea id="descricao" name="descricao" required>
+<%= descricao %></textarea
+      >
 
       <button type="submit">Salvar Alterações</button>
     </form>
 
     <form
+      class="delete-form"
       action="/projetos/delete/<%= id %>"
       method="POST"
       style="display: inline"
