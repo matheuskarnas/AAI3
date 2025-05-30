@@ -8,11 +8,35 @@
   </head>
   <body>
     <div class="projeto">
-      <h1><%= projetoName %></h1>      
+      <h1><%= projetoName %></h1>
     </div>
     <div class="descricao">
       <h2>Descrição do Projeto</h2>
       <p><%= descricao %></p>
     </div>
+
+    <h2>Editar Projeto</h2>
+    <form action="/projetos/update/<%= id %>" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="<%= projetoName %>" required />
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" required><%= descricao %></textarea>
+
+      <button type="submit">Salvar Alterações</button>
+    </form>
+
+    <form
+      action="/projetos/delete/<%= id %>"
+      method="POST"
+      style="display: inline"
+    >
+      <button
+        type="submit"
+        onclick="return confirm('Tem certeza que deseja excluir este projeto?');"
+      >
+        Excluir
+      </button>
+    </form>
   </body>
 </html>

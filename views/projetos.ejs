@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="/css/projeto.css" />
   </head>
   <body>
-    <% projetos.forEach(function(p) { %>
-      <div class="projeto">
-        <h1><%= p.nome %></h1>      
-      </div>
-      <div class="descricao">
-        <a href="/projetos/<%= p.id %>">Ver detalhes</a>
-      </div>
-    <% }); %>
     <h1>Cadastrar Novo Projeto</h1>
     <form action="/projetos" method="POST">
       <label for="nome">Nome do Projeto:</label>
@@ -25,6 +17,25 @@
 
       <button type="submit">Cadastrar</button>
     </form>
-    <a href="/projetos">Voltar para lista de projetos</a>
+    <% projetos.forEach(function(p) { %>
+    <div class="projeto">
+      <h1><%= p.nome %></h1>
+    </div>
+    <div class="descricao">
+      <a href="/projetos/<%= p.id %>">Ver detalhes</a>
+    </div>
+    <form
+      action="/projetos/delete/<%= p.id %>"
+      method="POST"
+      style="display: inline"
+    >
+      <button
+        type="submit"
+        onclick="return confirm('Tem certeza que deseja excluir este projeto?');"
+      >
+        Excluir
+      </button>
+    </form>
+    <% }); %>
   </body>
 </html>
